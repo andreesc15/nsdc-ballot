@@ -141,10 +141,10 @@
   <tbody>
     <tr>
       <th scope="col">1st Prop</th>
-      <th scope="col"><input id="content_1prop" onkeyup="sum_1prop();" name="content_1prop" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="style_1prop" onkeyup="sum_1prop();" name="style_1prop" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="strategy_1prop" onkeyup="sum_1prop();" name="strategy_1prop" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="poi_1prop" onkeyup="sum_1prop();" name="poi_1prop" type="number" placeholder="-2..2" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="content_1prop" onchange="sum_1prop();" name="content_1prop" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="style_1prop" onchange="sum_1prop();" name="style_1prop" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="strategy_1prop" onchange="sum_1prop();" name="strategy_1prop" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="poi_1prop" onchange="sum_1prop();" name="poi_1prop" type="number" placeholder="-2..2" class="form-control input-md" required=""></th>
       <th scope="col"><input readonly id="total_1prop" name="total_1prop" type="number" class="form-control input-md" required=""></th>
 
       <script>
@@ -159,22 +159,36 @@
         if(parseFloat(content_1prop.value)<24||parseFloat(content_1prop.value)>32)
         {
           content_1prop.style.backgroundColor = "#ff6961";
-          total_1prop.style.backgroundColor = "#ff6961";
         }
+        else
+        {
+          content_1prop.style.backgroundColor = "#ffffff";
+        }
+
         if(parseFloat(style_1prop.value)<24||parseFloat(style_1prop.value)>32)
         {
           style_1prop.style.backgroundColor = "#ff6961";
-          total_1prop.style.backgroundColor = "#ff6961";
+        }
+        else
+        {
+          style_1prop.style.backgroundColor = "#ffffff";
+ 
         }
         if(parseFloat(strategy_1prop.value)<12||parseFloat(strategy_1prop.value)>16)
         {
           strategy_1prop.style.backgroundColor = "#ff6961";
-          total_1prop.style.backgroundColor = "#ff6961";
+        }
+        else
+        {
+          strategy_1prop.style.backgroundColor = "#ffffff";
         }
         if(parseFloat(poi_1prop.value)<-2||parseFloat(poi_1prop.value)>2)
         {
           poi_1prop.style.backgroundColor = "#ff6961";
-          total_1prop.style.backgroundColor = "#ff6961";
+        }
+        else
+        {
+          poi_1prop.style.backgroundColor = "#ffffff";
         }
         
         var total = 
@@ -184,6 +198,7 @@
         + parseFloat(poi_1prop.value);
         if (!isNaN(total)) {
            total_1prop.value = total;
+           sum_prop();
         }
       }
       </script>
@@ -191,10 +206,10 @@
 
     <tr>
       <th scope="col">2nd Prop</th>
-      <th scope="col"><input id="content_2prop" onkeyup="sum_2prop();" name="content_2prop" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="style_2prop" onkeyup="sum_2prop();" name="style_2prop" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="strategy_2prop" onkeyup="sum_2prop();" name="strategy_2prop" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="poi_2prop" onkeyup="sum_2prop();" name="poi_2prop" type="number" placeholder="-2..2" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="content_2prop" onchange="sum_2prop();" name="content_2prop" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="style_2prop" onchange="sum_2prop();" name="style_2prop" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="strategy_2prop" onchange="sum_2prop();" name="strategy_2prop" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="poi_2prop" onchange="sum_2prop();" name="poi_2prop" type="number" placeholder="-2..2" class="form-control input-md" required=""></th>
       <th scope="col"><input readonly id="total_2prop" name="total_2prop" type="number" class="form-control input-md" required=""></th>
 
       <script>
@@ -209,22 +224,36 @@
         if(parseFloat(content_2prop.value)<24||parseFloat(content_2prop.value)>32)
         {
           content_2prop.style.backgroundColor = "#ff6961";
-          total_2prop.style.backgroundColor = "#ff6961";
         }
+        else
+        {
+          content_2prop.style.backgroundColor = "#ffffff";
+        }
+        
         if(parseFloat(style_2prop.value)<24||parseFloat(style_2prop.value)>32)
         {
           style_2prop.style.backgroundColor = "#ff6961";
-          total_2prop.style.backgroundColor = "#ff6961";
         }
+        else
+        {
+          style_2prop.style.backgroundColor = "#ffffff";
+        }
+
         if(parseFloat(strategy_2prop.value)<12||parseFloat(strategy_2prop.value)>16)
         {
           strategy_2prop.style.backgroundColor = "#ff6961";
-          total_2prop.style.backgroundColor = "#ff6961";
+        }
+        else
+        {
+          strategy_2prop.style.backgroundColor = "#ffffff";
         }
         if(parseFloat(poi_2prop.value)<-2||parseFloat(poi_2prop.value)>2)
         {
           poi_2prop.style.backgroundColor = "#ff6961";
-          total_2prop.style.backgroundColor = "#ff6961";
+        }
+        else
+        {
+          poi_2prop.style.backgroundColor = "#ffffff";
         }
         
         var total = 
@@ -234,6 +263,7 @@
         + parseFloat(poi_2prop.value);
         if (!isNaN(total)) {
            total_2prop.value = total;
+           sum_prop();
         }
       }
       </script>
@@ -241,10 +271,10 @@
 
     <tr>
       <th scope="col">3rd Prop</th>
-      <th scope="col"><input id="content_3prop" onkeyup="sum_3prop();" name="content_3prop" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="style_3prop" onkeyup="sum_3prop();" name="style_3prop" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="strategy_3prop" onkeyup="sum_3prop();" name="strategy_3prop" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="poi_3prop" onkeyup="sum_3prop();" name="poi_3prop" type="number" placeholder="-2..2" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="content_3prop" onchange="sum_3prop();" name="content_3prop" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="style_3prop" onchange="sum_3prop();" name="style_3prop" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="strategy_3prop" onchange="sum_3prop();" name="strategy_3prop" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="poi_3prop" onchange="sum_3prop();" name="poi_3prop" type="number" placeholder="-2..2" class="form-control input-md" required=""></th>
       <th scope="col"><input readonly id="total_3prop" name="total_3prop" type="number" class="form-control input-md" required=""></th>
 
       <script>
@@ -259,24 +289,36 @@
         if(parseFloat(content_3prop.value)<24||parseFloat(content_3prop.value)>32)
         {
           content_3prop.style.backgroundColor = "#ff6961";
-          total_3prop.style.backgroundColor = "#ff6961";
+        }
+        else
+        {
+          content_3prop.style.backgroundColor = "#ffffff";
         }
         if(parseFloat(style_3prop.value)<24||parseFloat(style_3prop.value)>32)
         {
           style_3prop.style.backgroundColor = "#ff6961";
-          total_3prop.style.backgroundColor = "#ff6961";
+        }
+        else
+        {
+          style_3prop.style.backgroundColor = "#ffffff";
         }
         if(parseFloat(strategy_3prop.value)<12||parseFloat(strategy_3prop.value)>16)
         {
           strategy_3prop.style.backgroundColor = "#ff6961";
-          total_3prop.style.backgroundColor = "#ff6961";
+        }
+        else
+        {
+          strategy_3prop.style.backgroundColor = "#ffffff";
         }
         if(parseFloat(poi_3prop.value)<-2||parseFloat(poi_3prop.value)>2)
         {
           poi_3prop.style.backgroundColor = "#ff6961";
-          total_3prop.style.backgroundColor = "#ff6961";
         }
-        
+        else
+        {
+          poi_3prop.style.backgroundColor = "#ffffff";
+        }
+
         var total = 
         parseFloat(content_3prop.value) 
         + parseFloat(style_3prop.value)
@@ -284,6 +326,7 @@
         + parseFloat(poi_3prop.value);
         if (!isNaN(total)) {
            total_3prop.value = total;
+           sum_prop();
         }
       }
       </script>
@@ -291,10 +334,10 @@
 
     <tr>
       <th scope="col">Prop Reply</th>
-      <th scope="col"><input id="content_replyprop" onkeyup="sum_replyprop();" name="content_replyprop" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="style_replyprop" onkeyup="sum_replyprop();" name="style_replyprop" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="strategy_replyprop" onkeyup="sum_replyprop();" name="strategy_replyprop" type="number" placeholder="6..8" class="form-control input-md" required=""></th>
-      <th scope="col"><input readonly id="poi_replyprop" onkeyup="sum_replyprop();" name="poi_replyprop" type="number" value="0" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="content_replyprop" onchange="sum_replyprop();" name="content_replyprop" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="style_replyprop" onchange="sum_replyprop();" name="style_replyprop" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="strategy_replyprop" onchange="sum_replyprop();" name="strategy_replyprop" type="number" placeholder="6..8" class="form-control input-md" required=""></th>
+      <th scope="col"></th>
       <th scope="col"><input readonly id="total_replyprop" name="total_replyprop" type="number" class="form-control input-md" required=""></th>
 
       <script>
@@ -302,38 +345,68 @@
         var content_replyprop = document.getElementById('content_replyprop');
         var style_replyprop = document.getElementById('style_replyprop');
         var strategy_replyprop = document.getElementById('strategy_replyprop');
-        var poi_replyprop = document.getElementById('poi_replyprop');
         var total_replyprop = document.getElementById('total_replyprop');
 
         var curr_replyprop = "";
-        if(parseFloat(content_replyprop.value)<24||parseFloat(content_replyprop.value)>32)
+        if(parseFloat(content_replyprop.value)<12||parseFloat(content_replyprop.value)>16)
         {
           content_replyprop.style.backgroundColor = "#ff6961";
-          total_replyprop.style.backgroundColor = "#ff6961";
         }
-        if(parseFloat(style_replyprop.value)<24||parseFloat(style_replyprop.value)>32)
+        else
+        {
+          content_replyprop.style.backgroundColor = "#ffffff";
+        }
+        if(parseFloat(style_replyprop.value)<12||parseFloat(style_replyprop.value)>16)
         {
           style_replyprop.style.backgroundColor = "#ff6961";
-          total_replyprop.style.backgroundColor = "#ff6961";
         }
-        if(parseFloat(strategy_replyprop.value)<12||parseFloat(strategy_replyprop.value)>16)
+        else
+        {
+          style_replyprop.style.backgroundColor = "#ffffff";
+        }
+        if(parseFloat(strategy_replyprop.value)<6||parseFloat(strategy_replyprop.value)>8)
         {
           strategy_replyprop.style.backgroundColor = "#ff6961";
-          total_replyprop.style.backgroundColor = "#ff6961";
         }
-        if(parseFloat(poi_replyprop.value)<-2||parseFloat(poi_replyprop.value)>2)
+        else
         {
-          poi_replyprop.style.backgroundColor = "#ff6961";
-          total_replyprop.style.backgroundColor = "#ff6961";
+          strategy_replyprop.style.backgroundColor = "#ffffff";
         }
         
         var total = 
         parseFloat(content_replyprop.value) 
         + parseFloat(style_replyprop.value)
-        + parseFloat(strategy_replyprop.value)
-        + parseFloat(poi_replyprop.value);
+        + parseFloat(strategy_replyprop.value);
         if (!isNaN(total)) {
            total_replyprop.value = total;
+           sum_prop();
+        }
+      }
+      </script>
+    </tr>
+
+    <tr>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col">Total Team Score</th>
+      <th scope="col"><input readonly id="total_prop" name="total_prop" type="number" class="form-control input-md" required=""></th>
+      <script>
+      function sum_prop() {
+        var total_1prop = document.getElementById('total_1prop');
+        var total_2prop = document.getElementById('total_2prop');
+        var total_3prop = document.getElementById('total_3prop');
+        var total_replyprop = document.getElementById('total_replyprop');
+        var total_prop = document.getElementById('total_prop');
+        
+        var total = 
+        parseFloat(total_1prop.value) 
+        + parseFloat(total_2prop.value)
+        + parseFloat(total_3prop.value)
+        + parseFloat(total_replyprop.value);
+        if (!isNaN(total)) {
+           total_prop.value = total;
         }
       }
       </script>
@@ -358,10 +431,10 @@
   <tbody>
     <tr>
       <th scope="col">1st Opp</th>
-      <th scope="col"><input id="content_1opp" onkeyup="sum_1opp();" name="content_1opp" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="style_1opp" onkeyup="sum_1opp();" name="style_1opp" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="strategy_1opp" onkeyup="sum_1opp();" name="strategy_1opp" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="poi_1opp" onkeyup="sum_1opp();" name="poi_1opp" type="number" placeholder="-2..2" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="content_1opp" onchange="sum_1opp();" name="content_1opp" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="style_1opp" onchange="sum_1opp();" name="style_1opp" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="strategy_1opp" onchange="sum_1opp();" name="strategy_1opp" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="poi_1opp" onchange="sum_1opp();" name="poi_1opp" type="number" placeholder="-2..2" class="form-control input-md" required=""></th>
       <th scope="col"><input readonly id="total_1opp" name="total_1opp" type="number" class="form-control input-md" required=""></th>
 
       <script>
@@ -376,22 +449,34 @@
         if(parseFloat(content_1opp.value)<24||parseFloat(content_1opp.value)>32)
         {
           content_1opp.style.backgroundColor = "#ff6961";
-          total_1opp.style.backgroundColor = "#ff6961";
+        }
+        else
+        {
+          content_1opp.style.backgroundColor = "#ffffff";
         }
         if(parseFloat(style_1opp.value)<24||parseFloat(style_1opp.value)>32)
         {
           style_1opp.style.backgroundColor = "#ff6961";
-          total_1opp.style.backgroundColor = "#ff6961";
+        }
+        else
+        {
+          style_1opp.style.backgroundColor = "#ffffff";
         }
         if(parseFloat(strategy_1opp.value)<12||parseFloat(strategy_1opp.value)>16)
         {
           strategy_1opp.style.backgroundColor = "#ff6961";
-          total_1opp.style.backgroundColor = "#ff6961";
+        }
+        else
+        {
+          strategy_1opp.style.backgroundColor = "#ffffff";
         }
         if(parseFloat(poi_1opp.value)<-2||parseFloat(poi_1opp.value)>2)
         {
           poi_1opp.style.backgroundColor = "#ff6961";
-          total_1opp.style.backgroundColor = "#ff6961";
+        }
+        else
+        {
+          poi_1opp.style.backgroundColor = "#ffffff";
         }
         
         var total = 
@@ -401,6 +486,7 @@
         + parseFloat(poi_1opp.value);
         if (!isNaN(total)) {
            total_1opp.value = total;
+           sum_opp();
         }
       }
       </script>
@@ -408,10 +494,10 @@
 
     <tr>
       <th scope="col">2nd opp</th>
-      <th scope="col"><input id="content_2opp" onkeyup="sum_2opp();" name="content_2opp" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="style_2opp" onkeyup="sum_2opp();" name="style_2opp" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="strategy_2opp" onkeyup="sum_2opp();" name="strategy_2opp" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="poi_2opp" onkeyup="sum_2opp();" name="poi_2opp" type="number" placeholder="-2..2" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="content_2opp" onchange="sum_2opp();" name="content_2opp" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="style_2opp" onchange="sum_2opp();" name="style_2opp" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="strategy_2opp" onchange="sum_2opp();" name="strategy_2opp" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="poi_2opp" onchange="sum_2opp();" name="poi_2opp" type="number" placeholder="-2..2" class="form-control input-md" required=""></th>
       <th scope="col"><input readonly id="total_2opp" name="total_2opp" type="number" class="form-control input-md" required=""></th>
 
       <script>
@@ -426,24 +512,35 @@
         if(parseFloat(content_2opp.value)<24||parseFloat(content_2opp.value)>32)
         {
           content_2opp.style.backgroundColor = "#ff6961";
-          total_2opp.style.backgroundColor = "#ff6961";
+        }
+        else
+        {
+          content_2opp.style.backgroundColor = "#ffffff";
         }
         if(parseFloat(style_2opp.value)<24||parseFloat(style_2opp.value)>32)
         {
           style_2opp.style.backgroundColor = "#ff6961";
-          total_2opp.style.backgroundColor = "#ff6961";
+        }
+        else
+        {
+          style_2opp.style.backgroundColor = "#ffffff";
         }
         if(parseFloat(strategy_2opp.value)<12||parseFloat(strategy_2opp.value)>16)
         {
           strategy_2opp.style.backgroundColor = "#ff6961";
-          total_2opp.style.backgroundColor = "#ff6961";
+        }
+        else
+        {
+          strategy_2opp.style.backgroundColor = "#ffffff";
         }
         if(parseFloat(poi_2opp.value)<-2||parseFloat(poi_2opp.value)>2)
         {
           poi_2opp.style.backgroundColor = "#ff6961";
-          total_2opp.style.backgroundColor = "#ff6961";
         }
-        
+        else
+        {
+          poi_2opp.style.backgroundColor = "#ffffff";
+        }
         var total = 
         parseFloat(content_2opp.value) 
         + parseFloat(style_2opp.value)
@@ -451,6 +548,7 @@
         + parseFloat(poi_2opp.value);
         if (!isNaN(total)) {
            total_2opp.value = total;
+           sum_opp();
         }
       }
       </script>
@@ -458,10 +556,10 @@
 
     <tr>
       <th scope="col">3rd opp</th>
-      <th scope="col"><input id="content_3opp" onkeyup="sum_3opp();" name="content_3opp" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="style_3opp" onkeyup="sum_3opp();" name="style_3opp" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="strategy_3opp" onkeyup="sum_3opp();" name="strategy_3opp" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="poi_3opp" onkeyup="sum_3opp();" name="poi_3opp" type="number" placeholder="-2..2" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="content_3opp" onchange="sum_3opp();" name="content_3opp" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="style_3opp" onchange="sum_3opp();" name="style_3opp" type="number" placeholder="24..32" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="strategy_3opp" onchange="sum_3opp();" name="strategy_3opp" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="poi_3opp" onchange="sum_3opp();" name="poi_3opp" type="number" placeholder="-2..2" class="form-control input-md" required=""></th>
       <th scope="col"><input readonly id="total_3opp" name="total_3opp" type="number" class="form-control input-md" required=""></th>
 
       <script>
@@ -476,22 +574,34 @@
         if(parseFloat(content_3opp.value)<24||parseFloat(content_3opp.value)>32)
         {
           content_3opp.style.backgroundColor = "#ff6961";
-          total_3opp.style.backgroundColor = "#ff6961";
+        }
+        else
+        {
+          content_3opp.style.backgroundColor = "#ffffff";
         }
         if(parseFloat(style_3opp.value)<24||parseFloat(style_3opp.value)>32)
         {
           style_3opp.style.backgroundColor = "#ff6961";
-          total_3opp.style.backgroundColor = "#ff6961";
+        }
+        else
+        {
+          style_3opp.style.backgroundColor = "#ffffff";
         }
         if(parseFloat(strategy_3opp.value)<12||parseFloat(strategy_3opp.value)>16)
         {
           strategy_3opp.style.backgroundColor = "#ff6961";
-          total_3opp.style.backgroundColor = "#ff6961";
+        }
+        else
+        {
+          strategy_3opp.style.backgroundColor = "#ffffff";
         }
         if(parseFloat(poi_3opp.value)<-2||parseFloat(poi_3opp.value)>2)
         {
           poi_3opp.style.backgroundColor = "#ff6961";
-          total_3opp.style.backgroundColor = "#ff6961";
+        }
+        else
+        {
+          poi_3opp.style.backgroundColor = "#ffffff";
         }
         
         var total = 
@@ -501,6 +611,7 @@
         + parseFloat(poi_3opp.value);
         if (!isNaN(total)) {
            total_3opp.value = total;
+           sum_opp();
         }
       }
       </script>
@@ -508,57 +619,95 @@
 
     <tr>
       <th scope="col">opp Reply</th>
-      <th scope="col"><input id="content_replyopp" onkeyup="sum_replyopp();" name="content_replyopp" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="style_replyopp" onkeyup="sum_replyopp();" name="style_replyopp" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
-      <th scope="col"><input id="strategy_replyopp" onkeyup="sum_replyopp();" name="strategy_replyopp" type="number" placeholder="6..8" class="form-control input-md" required=""></th>
-      <th scope="col"><input readonly id="poi_replyopp" onkeyup="sum_replyopp();" name="poi_replyopp" type="number" value="0" class="form-control input-md" required=""></th>
-      <th scope="col"><input readonly id="total_replyopp" name="total_replyopp" type="number" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="content_replyopp" onchange="sum_replyopp();" name="content_replyopp" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="style_replyopp" onchange="sum_replyopp();" name="style_replyopp" type="number" placeholder="12..16" class="form-control input-md" required=""></th>
+      <th scope="col"><input id="strategy_replyopp" onchange="sum_replyopp();" name="strategy_replyopp" type="number" placeholder="6..8" class="form-control input-md" required=""></th>
+      <th scope="col"></th>
+      <th scope="col"><input readonly34 id="total_replyopp" name="total_replyopp" type="number" class="form-control input-md" required=""></th>
 
       <script>
       function sum_replyopp() {
         var content_replyopp = document.getElementById('content_replyopp');
         var style_replyopp = document.getElementById('style_replyopp');
         var strategy_replyopp = document.getElementById('strategy_replyopp');
-        var poi_replyopp = document.getElementById('poi_replyopp');
         var total_replyopp = document.getElementById('total_replyopp');
 
         var curr_replyopp = "";
-        if(parseFloat(content_replyopp.value)<24||parseFloat(content_replyopp.value)>32)
+        if(parseFloat(content_replyopp.value)<12||parseFloat(content_replyopp.value)>16)
         {
           content_replyopp.style.backgroundColor = "#ff6961";
-          total_replyopp.style.backgroundColor = "#ff6961";
         }
-        if(parseFloat(style_replyopp.value)<24||parseFloat(style_replyopp.value)>32)
+        else
+        {
+          content_replyopp.style.backgroundColor = "#ffffff";
+        }
+        if(parseFloat(style_replyopp.value)<12||parseFloat(style_replyopp.value)>16)
         {
           style_replyopp.style.backgroundColor = "#ff6961";
-          total_replyopp.style.backgroundColor = "#ff6961";
         }
-        if(parseFloat(strategy_replyopp.value)<12||parseFloat(strategy_replyopp.value)>16)
+        else
+        {
+          style_replyopp.style.backgroundColor = "#ffffff";
+        }
+        if(parseFloat(strategy_replyopp.value)<6||parseFloat(strategy_replyopp.value)>8)
         {
           strategy_replyopp.style.backgroundColor = "#ff6961";
-          total_replyopp.style.backgroundColor = "#ff6961";
         }
-        if(parseFloat(poi_replyopp.value)<-2||parseFloat(poi_replyopp.value)>2)
+        else
         {
-          poi_replyopp.style.backgroundColor = "#ff6961";
-          total_replyopp.style.backgroundColor = "#ff6961";
+          strategy_replyopp.style.backgroundColor = "#ffffff";
         }
         
         var total = 
         parseFloat(content_replyopp.value) 
         + parseFloat(style_replyopp.value)
-        + parseFloat(strategy_replyopp.value)
-        + parseFloat(poi_replyopp.value);
+        + parseFloat(strategy_replyopp.value);
         if (!isNaN(total)) {
            total_replyopp.value = total;
+           sum_opp();
         }
       }
       </script>
     </tr>
 
+    <tr>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col">Total Opp Score</th>
+      <th scope="col"><input readonly id="total_opp" name="total_opp" type="number" class="form-control input-md" required=""></th>
+      <script>
+      function sum_opp() {
+        var total_1opp = document.getElementById('total_1opp');
+        var total_2opp = document.getElementById('total_2opp');
+        var total_3opp = document.getElementById('total_3opp');
+        var total_replyopp = document.getElementById('total_replyopp');
+        var total_opp = document.getElementById('total_opp');
+        
+        var total = 
+        parseFloat(total_1opp.value) 
+        + parseFloat(total_2opp.value)
+        + parseFloat(total_3opp.value)
+        + parseFloat(total_replyopp.value);
+        if (!isNaN(total)) {
+           total_opp.value = total;
+        }
+      }
+      </script>
+    </tr>
 
   </tbody>
 </table>
+
+<p>This document is an official replacement for paper ballots. By clicking submit, you hereby declare that you have responsibly filled in all the fields correctly.</p>
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submit">Submit Ballot</label>
+  <div class="col-md-4">
+    <button id="submit" name="submit" class="btn btn-primary">Submit</button>
+  </div>
+</div>
 
 </fieldset>
 </form>
