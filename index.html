@@ -26,6 +26,14 @@
 <form id="myForm" method="post" class="form-horizontal">
 <fieldset>
 
+<!-- Timestamp -->
+<input type="hidden" id="timestamp" name="timestamp">
+<script type="text/javascript">
+var today = new Date();
+var timestamp = document.getElementById('timestamp');
+timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+</script>
+
 <!-- Form Name -->
 <legend><b>NSDC 2020 Scoresheets</b></legend>
 <legend>1. Debate Details</legend>
