@@ -6,8 +6,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
 </script>
 <script>
-    function Validate(){
-        var judge = document.getElementById('judge');
+    function isCorrect(){
+              var judge = document.getElementById('judge');
+
+        var rounds = document.getElementById('rounds');
+        var prop = document.getElementById('prop');
+        var opp = document.getElementById('opp');
 
         var content_1prop = document.getElementById('content_1prop');
         var style_1prop = document.getElementById('style_1prop');
@@ -62,61 +66,68 @@
         var flag = true;
 
         if(!judge.value) flag = false;
-        if(!content_1prop.value||content_1prop.value<24||content_1prop.value>32) flag = false;
-        if(!style_1prop.value||style_1prop.value<24||style_1prop.value>32) flag = false;
-        if(!strategy_1prop.value||strategy_1prop.value<12||strategy_1prop.value>16) flag = false;
-        if(!poi_1prop.value||poi_1prop.value<-2||poi_1prop.value>2) flag = false;
+
+        if(rounds.value == "--") flag = false;
+        if(prop.value == "--") flag = false;
+        if(opp.value == "--") flag = false;
+
+
+        if(!content_1prop.value||content_1prop.value<24||content_1prop.value>32||!Number.isInteger(2*content_1prop.value)) flag = false;
+        if(!style_1prop.value||style_1prop.value<24||style_1prop.value>32||!Number.isInteger(2*style_1prop.value)) flag = false;
+        if(!strategy_1prop.value||strategy_1prop.value<12||strategy_1prop.value>16||!Number.isInteger(2*strategy_1prop.value)) flag = false;
+        if(!poi_1prop.value||poi_1prop.value<-2||poi_1prop.value>2||!Number.isInteger(2*poi_1prop.value)) flag = false;
         if(!total_1prop.value) flag = false;
 
-        if(!content_2prop.value||content_2prop.value<24||content_2prop.value>32) flag = false;
-        if(!style_2prop.value||style_2prop.value<24||style_2prop.value>32) flag = false;
-        if(!strategy_2prop.value||strategy_2prop.value<12||strategy_2prop.value>16) flag = false;
-        if(!poi_2prop.value||poi_2prop.value<-2||poi_2prop.value>2) flag = false;
+        if(!content_2prop.value||content_2prop.value<24||content_2prop.value>32||!Number.isInteger(2*content_2prop.value)) flag = false;
+        if(!style_2prop.value||style_2prop.value<24||style_2prop.value>32||!Number.isInteger(2*style_2prop.value)) flag = false;
+        if(!strategy_2prop.value||strategy_2prop.value<12||strategy_2prop.value>16||!Number.isInteger(2*strategy_2prop.value)) flag = false;
+        if(!poi_2prop.value||poi_2prop.value<-2||poi_2prop.value>2||!Number.isInteger(2*poi_2prop.value)) flag = false;
         if(!total_2prop.value) flag = false;
 
-        if(!content_3prop.value||content_3prop.value<24||content_3prop.value>32) flag = false;
-        if(!style_3prop.value||style_3prop.value<24||style_3prop.value>32) flag = false;
-        if(!strategy_3prop.value||strategy_3prop.value<12||strategy_3prop.value>16) flag = false;
-        if(!poi_3prop.value||poi_3prop.value<-2||poi_3prop.value>2) flag = false;
+        if(!content_3prop.value||content_3prop.value<24||content_3prop.value>32||!Number.isInteger(2*content_3prop.value)) flag = false;
+        if(!style_3prop.value||style_3prop.value<24||style_3prop.value>32||!Number.isInteger(2*style_3prop.value)) flag = false;
+        if(!strategy_3prop.value||strategy_3prop.value<12||strategy_3prop.value>16||!Number.isInteger(2*strategy_3prop.value)) flag = false;
+        if(!poi_3prop.value||poi_3prop.value<-2||poi_3prop.value>2||!Number.isInteger(2*poi_3prop.value)) flag = false;
         if(!total_3prop.value) flag = false;
 
 
-        if(!content_replyprop.value||content_replyprop.value<12||content_replyprop.value>16) flag = false;
-        if(!style_replyprop.value||style_replyprop.value<12||style_replyprop.value>16) flag = false;
-        if(!strategy_replyprop.value||strategy_replyprop.value<6||strategy_replyprop.value>8) flag = false;
+        if(!content_replyprop.value||content_replyprop.value<12||content_replyprop.value>16||!Number.isInteger(2*content_replyprop.value)) flag = false;
+        if(!style_replyprop.value||style_replyprop.value<12||style_replyprop.value>16||!Number.isInteger(2*style_replyprop.value)) flag = false;
+        if(!strategy_replyprop.value||strategy_replyprop.value<6||strategy_replyprop.value>8||!Number.isInteger(2*strategy_replyprop.value)) flag = false;
         if(!total_replyprop.value) flag = false;
 
         if(!total_prop.value) flag = false;
 
-        if(!content_1opp.value||content_1opp.value<24||content_1opp.value>32) flag = false;
-        if(!style_1opp.value||style_1opp.value<24||style_1opp.value>32) flag = false;
-        if(!strategy_1opp.value||strategy_1opp.value<12||strategy_1opp.value>16) flag = false;
-        if(!poi_1opp.value||poi_1opp.value<-2||poi_1opp.value>2) flag = false;
+        if(!content_1opp.value||content_1opp.value<24||content_1opp.value>32||!Number.isInteger(2*content_1opp.value)) flag = false;
+        if(!style_1opp.value||style_1opp.value<24||style_1opp.value>32||!Number.isInteger(2*style_1opp.value)) flag = false;
+        if(!strategy_1opp.value||strategy_1opp.value<12||strategy_1opp.value>16||!Number.isInteger(2*strategy_1opp.value)) flag = false;
+        if(!poi_1opp.value||poi_1opp.value<-2||poi_1opp.value>2||!Number.isInteger(2*poi_1opp.value)) flag = false;
         if(!total_1opp.value) flag = false;
 
-        if(!content_2opp.value||content_2opp.value<24||content_2opp.value>32) flag = false;
-        if(!style_2opp.value||style_2opp.value<24||style_2opp.value>32) flag = false;
-        if(!strategy_2opp.value||strategy_2opp.value<12||strategy_2opp.value>16) flag = false;
-        if(!poi_2opp.value||poi_2opp.value<-2||poi_2opp.value>2) flag = false;
+        if(!content_2opp.value||content_2opp.value<24||content_2opp.value>32||!Number.isInteger(2*content_2opp.value)) flag = false;
+        if(!style_2opp.value||style_2opp.value<24||style_2opp.value>32||!Number.isInteger(2*style_2opp.value)) flag = false;
+        if(!strategy_2opp.value||strategy_2opp.value<12||strategy_2opp.value>16||!Number.isInteger(2*strategy_2opp.value)) flag = false;
+        if(!poi_2opp.value||poi_2opp.value<-2||poi_2opp.value>2||!Number.isInteger(2*poi_2opp.value)) flag = false;
         if(!total_2opp.value) flag = false;
 
-        if(!content_3opp.value||content_3opp.value<24||content_3opp.value>32) flag = false;
-        if(!style_3opp.value||style_3opp.value<24||style_3opp.value>32) flag = false;
-        if(!strategy_3opp.value||strategy_3opp.value<12||strategy_3opp.value>16) flag = false;
-        if(!poi_3opp.value||poi_3opp.value<-2||poi_3opp.value>2) flag = false;
+        if(!content_3opp.value||content_3opp.value<24||content_3opp.value>32||!Number.isInteger(2*content_3opp.value)) flag = false;
+        if(!style_3opp.value||style_3opp.value<24||style_3opp.value>32||!Number.isInteger(2*style_3opp.value)) flag = false;
+        if(!strategy_3opp.value||strategy_3opp.value<12||strategy_3opp.value>16||!Number.isInteger(2*strategy_3opp.value)) flag = false;
+        if(!poi_3opp.value||poi_3opp.value<-2||poi_3opp.value>2||!Number.isInteger(2*poi_3opp.value)) flag = false;
         if(!total_3opp.value) flag = false;
 
 
-        if(!content_replyopp.value||content_replyopp.value<12||content_replyopp.value>16) flag = false;
-        if(!style_replyopp.value||style_replyopp.value<12||style_replyopp.value>16) flag = false;
-        if(!strategy_replyopp.value||strategy_replyopp.value<6||strategy_replyopp.value>8) flag = false;
+        if(!content_replyopp.value||content_replyopp.value<12||content_replyopp.value>16||!Number.isInteger(2*content_replyopp.value)) flag = false;
+        if(!style_replyopp.value||style_replyopp.value<12||style_replyopp.value>16||!Number.isInteger(2*style_replyopp.value)) flag = false;
+        if(!strategy_replyopp.value||strategy_replyopp.value<6||strategy_replyopp.value>8||!Number.isInteger(2*strategy_replyopp.value)) flag = false;
         if(!total_replyopp.value) flag = false;
 
         if(!total_opp.value) flag = false;
-        
-
-        if(flag) SubForm();
-        else alert("some boxes aren't filled yet. Please recheck!");             
+        return flag;
+    }
+    function Finalize(){        
+        if(isCorrect()) SubForm();
+        else alert("some boxes aren't filled properly yet. Please recheck!");             
     }
 
     function SubForm (){
@@ -164,7 +175,8 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
 <div class="form-group">
   <label class="col-md-6 control-label" for="rounds">Round</label>
   <div class="col-md-6">
-    <select id="rounds" name="rounds" class="form-control">
+    <select id="rounds" name="rounds" onchange="summarize()" class="form-control">
+      <option value="--">--</option>
       <option value="1">Round 1</option>
       <option value="2">Round 2</option>
       <option value="3">Round 3</option>
@@ -182,7 +194,8 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
 <div class="form-row">
   <div class="col-md-3">
     <label for="prop">➕Proposition Team?</label>
-    <select id="prop" name="prop" class="form-control">
+    <select id="prop" name="prop" onchange="summarize()" class="form-control">
+      <option value="--">--</option>
       <option value="ACEH">ACEH</option>
       <option value="BALI">BALI</option>
       <option value="BANGKA BELITUNG">BANGKA BELITUNG</option>
@@ -224,7 +237,8 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
 
   <div class="col-md-3">
     <label for="opp">➖Opposition Team?</label>
-    <select id="opp" name="opp" class="form-control">
+    <select id="opp" name="opp" onchange="summarize()" class="form-control">
+      <option value="--">--</option>
       <option value="ACEH">ACEH</option>
       <option value="BALI">BALI</option>
       <option value="BANGKA BELITUNG">BANGKA BELITUNG</option>
@@ -270,10 +284,10 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
    <thead>
     <tr>
       <th scope="col">Position</th>
-      <th scope="col">Content (24 - 32)</th>
-      <th scope="col">Style (24 - 32)</th>
-      <th scope="col">Strategy (12 - 16)</th>
-      <th scope="col">POI (-2 - 2)</th>
+      <th scope="col">Content (24 to 32)</th>
+      <th scope="col">Style (24 to 32)</th>
+      <th scope="col">Strategy (12 to 16)</th>
+      <th scope="col">POI (-2 to 2)</th>
       <th scope="col">Total</th>
     </tr>
   </thead>
@@ -284,7 +298,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
       <th scope="col"><input id="style_1prop" step="0.5" onchange="sum_1prop();" name="style_1prop" type="number" placeholder="24 to 32" class="form-control input-md" required=""></th>
       <th scope="col"><input id="strategy_1prop" step="0.5" onchange="sum_1prop();" name="strategy_1prop" type="number" placeholder="12 to 16" class="form-control input-md" required=""></th>
       <th scope="col"><input id="poi_1prop" step="0.5" onchange="sum_1prop();" name="poi_1prop" type="number" placeholder="-2 to 2" class="form-control input-md" required=""></th>
-      <th scope="col"><input readonly id="total_1prop" name="total_1prop" type="number" class="form-control input-md" required=""></th>
+      <th scope="col"><input readonly id="total_1prop" name="total_1prop" onchange="summarize()" type="number" class="form-control input-md" required=""></th>
 
       <script>
       function sum_1prop() {
@@ -295,7 +309,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         var total_1prop = document.getElementById('total_1prop');
 
         var curr_1prop = "";
-        if(parseFloat(content_1prop.value)<24||parseFloat(content_1prop.value)>32)
+        if(parseFloat(content_1prop.value)<24||parseFloat(content_1prop.value)>32||!Number.isInteger(2*content_1prop.value))
         {
           content_1prop.style.backgroundColor = "#ff6961";
         }
@@ -304,7 +318,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
           content_1prop.style.backgroundColor = "#ffffff";
         }
 
-        if(parseFloat(style_1prop.value)<24||parseFloat(style_1prop.value)>32)
+        if(parseFloat(style_1prop.value)<24||parseFloat(style_1prop.value)>32||!Number.isInteger(2*style_1prop.value))
         {
           style_1prop.style.backgroundColor = "#ff6961";
         }
@@ -313,7 +327,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
           style_1prop.style.backgroundColor = "#ffffff";
  
         }
-        if(parseFloat(strategy_1prop.value)<12||parseFloat(strategy_1prop.value)>16)
+        if(parseFloat(strategy_1prop.value)<12||parseFloat(strategy_1prop.value)>16||!Number.isInteger(2*strategy_1prop.value))
         {
           strategy_1prop.style.backgroundColor = "#ff6961";
         }
@@ -321,7 +335,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         {
           strategy_1prop.style.backgroundColor = "#ffffff";
         }
-        if(parseFloat(poi_1prop.value)<-2||parseFloat(poi_1prop.value)>2)
+        if(parseFloat(poi_1prop.value)<-2||parseFloat(poi_1prop.value)>2||!Number.isInteger(2*poi_1prop.value))
         {
           poi_1prop.style.backgroundColor = "#ff6961";
         }
@@ -349,7 +363,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
       <th scope="col"><input id="style_2prop" step="0.5" onchange="sum_2prop();" name="style_2prop" type="number" placeholder="24 to 32" class="form-control input-md" required=""></th>
       <th scope="col"><input id="strategy_2prop" step="0.5" onchange="sum_2prop();" name="strategy_2prop" type="number" placeholder="12 to 16" class="form-control input-md" required=""></th>
       <th scope="col"><input id="poi_2prop" step="0.5" onchange="sum_2prop();" name="poi_2prop" type="number" placeholder="-2 to 2" class="form-control input-md" required=""></th>
-      <th scope="col"><input readonly id="total_2prop" name="total_2prop" type="number" class="form-control input-md" required=""></th>
+      <th scope="col"><input readonly id="total_2prop" name="total_2prop" onchange="summarize()" type="number" class="form-control input-md" required=""></th>
 
       <script>
       function sum_2prop() {
@@ -360,7 +374,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         var total_2prop = document.getElementById('total_2prop');
 
         var curr_2prop = "";
-        if(parseFloat(content_2prop.value)<24||parseFloat(content_2prop.value)>32)
+        if(parseFloat(content_2prop.value)<24||parseFloat(content_2prop.value)>32||!Number.isInteger(2*content_2prop.value))
         {
           content_2prop.style.backgroundColor = "#ff6961";
         }
@@ -369,7 +383,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
           content_2prop.style.backgroundColor = "#ffffff";
         }
         
-        if(parseFloat(style_2prop.value)<24||parseFloat(style_2prop.value)>32)
+        if(parseFloat(style_2prop.value)<24||parseFloat(style_2prop.value)>32||!Number.isInteger(2*style_2prop.value))
         {
           style_2prop.style.backgroundColor = "#ff6961";
         }
@@ -378,7 +392,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
           style_2prop.style.backgroundColor = "#ffffff";
         }
 
-        if(parseFloat(strategy_2prop.value)<12||parseFloat(strategy_2prop.value)>16)
+        if(parseFloat(strategy_2prop.value)<12||parseFloat(strategy_2prop.value)>16||!Number.isInteger(2*strategy_2prop.value))
         {
           strategy_2prop.style.backgroundColor = "#ff6961";
         }
@@ -386,7 +400,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         {
           strategy_2prop.style.backgroundColor = "#ffffff";
         }
-        if(parseFloat(poi_2prop.value)<-2||parseFloat(poi_2prop.value)>2)
+        if(parseFloat(poi_2prop.value)<-2||parseFloat(poi_2prop.value)>2||!Number.isInteger(2*poi_2prop.value))
         {
           poi_2prop.style.backgroundColor = "#ff6961";
         }
@@ -414,7 +428,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
       <th scope="col"><input id="style_3prop" step="0.5" onchange="sum_3prop();" name="style_3prop" type="number" placeholder="24 to 32" class="form-control input-md" required=""></th>
       <th scope="col"><input id="strategy_3prop" step="0.5" onchange="sum_3prop();" name="strategy_3prop" type="number" placeholder="12 to 16" class="form-control input-md" required=""></th>
       <th scope="col"><input id="poi_3prop" step="0.5" onchange="sum_3prop();" name="poi_3prop" type="number" placeholder="-2 to 2" class="form-control input-md" required=""></th>
-      <th scope="col"><input readonly id="total_3prop" name="total_3prop" type="number" class="form-control input-md" required=""></th>
+      <th scope="col"><input readonly id="total_3prop" name="total_3prop" onchange="summarize()" type="number" class="form-control input-md" required=""></th>
 
       <script>
       function sum_3prop() {
@@ -425,7 +439,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         var total_3prop = document.getElementById('total_3prop');
 
         var curr_3prop = "";
-        if(parseFloat(content_3prop.value)<24||parseFloat(content_3prop.value)>32)
+        if(parseFloat(content_3prop.value)<24||parseFloat(content_3prop.value)>32||!Number.isInteger(2*content_3prop.value))
         {
           content_3prop.style.backgroundColor = "#ff6961";
         }
@@ -433,7 +447,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         {
           content_3prop.style.backgroundColor = "#ffffff";
         }
-        if(parseFloat(style_3prop.value)<24||parseFloat(style_3prop.value)>32)
+        if(parseFloat(style_3prop.value)<24||parseFloat(style_3prop.value)>32||!Number.isInteger(2*style_3prop.value))
         {
           style_3prop.style.backgroundColor = "#ff6961";
         }
@@ -441,7 +455,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         {
           style_3prop.style.backgroundColor = "#ffffff";
         }
-        if(parseFloat(strategy_3prop.value)<12||parseFloat(strategy_3prop.value)>16)
+        if(parseFloat(strategy_3prop.value)<12||parseFloat(strategy_3prop.value)>16||!Number.isInteger(2*strategy_3prop.value))
         {
           strategy_3prop.style.backgroundColor = "#ff6961";
         }
@@ -449,7 +463,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         {
           strategy_3prop.style.backgroundColor = "#ffffff";
         }
-        if(parseFloat(poi_3prop.value)<-2||parseFloat(poi_3prop.value)>2)
+        if(parseFloat(poi_3prop.value)<-2||parseFloat(poi_3prop.value)>2||!Number.isInteger(2*poi_3prop.value))
         {
           poi_3prop.style.backgroundColor = "#ff6961";
         }
@@ -477,7 +491,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
       <th scope="col"><input id="style_replyprop" step="0.5" onchange="sum_replyprop();" name="style_replyprop" type="number" placeholder="12 to 16" class="form-control input-md" required=""></th>
       <th scope="col"><input id="strategy_replyprop" step="0.5" onchange="sum_replyprop();" name="strategy_replyprop" type="number" placeholder="6 to 8" class="form-control input-md" required=""></th>
       <th scope="col"></th>
-      <th scope="col"><input readonly id="total_replyprop" name="total_replyprop" type="number" class="form-control input-md" required=""></th>
+      <th scope="col"><input readonly id="total_replyprop" name="total_replyprop" onchange="summarize()" type="number" class="form-control input-md" required=""></th>
 
       <script>
       function sum_replyprop() {
@@ -487,7 +501,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         var total_replyprop = document.getElementById('total_replyprop');
 
         var curr_replyprop = "";
-        if(parseFloat(content_replyprop.value)<12||parseFloat(content_replyprop.value)>16)
+        if(parseFloat(content_replyprop.value)<12||parseFloat(content_replyprop.value)>16||!Number.isInteger(2*content_replyprop.value))
         {
           content_replyprop.style.backgroundColor = "#ff6961";
         }
@@ -495,7 +509,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         {
           content_replyprop.style.backgroundColor = "#ffffff";
         }
-        if(parseFloat(style_replyprop.value)<12||parseFloat(style_replyprop.value)>16)
+        if(parseFloat(style_replyprop.value)<12||parseFloat(style_replyprop.value)>16||!Number.isInteger(2*style_replyprop.value))
         {
           style_replyprop.style.backgroundColor = "#ff6961";
         }
@@ -503,7 +517,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         {
           style_replyprop.style.backgroundColor = "#ffffff";
         }
-        if(parseFloat(strategy_replyprop.value)<6||parseFloat(strategy_replyprop.value)>8)
+        if(parseFloat(strategy_replyprop.value)<6||parseFloat(strategy_replyprop.value)>8||!Number.isInteger(2*strategy_replyprop.value))
         {
           strategy_replyprop.style.backgroundColor = "#ff6961";
         }
@@ -530,7 +544,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
       <th scope="col"></th>
       <th scope="col"></th>
       <th scope="col">Total Team Score</th>
-      <th scope="col"><input readonly id="total_prop" name="total_prop" type="number" class="form-control input-md" required=""></th>
+      <th scope="col"><input readonly id="total_prop" name="total_prop" type="number" onchange="summarize()" class="form-control input-md" required=""></th>
       <script>
       function sum_prop() {
         var total_1prop = document.getElementById('total_1prop');
@@ -547,6 +561,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         if (!isNaN(total)) {
            total_prop.value = total;
         }
+        summarize();
       }
       </script>
     </tr>
@@ -560,10 +575,10 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
    <thead>
     <tr>
       <th scope="col">Position</th>
-      <th scope="col">Content (24 - 32)</th>
-      <th scope="col">Style (24 - 32)</th>
-      <th scope="col">Strategy (12 - 16)</th>
-      <th scope="col">POI (-2 - 2)</th>
+      <th scope="col">Content (24 to 32)</th>
+      <th scope="col">Style (24 to 32)</th>
+      <th scope="col">Strategy (12 to 16)</th>
+      <th scope="col">POI (-2 to 2)</th>
       <th scope="col">Total</th>
     </tr>
   </thead>
@@ -574,7 +589,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
       <th scope="col"><input id="style_1opp" step="0.5" onchange="sum_1opp();" name="style_1opp" type="number" placeholder="24 to 32" class="form-control input-md" required=""></th>
       <th scope="col"><input id="strategy_1opp" step="0.5" onchange="sum_1opp();" name="strategy_1opp" type="number" placeholder="12 to 16" class="form-control input-md" required=""></th>
       <th scope="col"><input id="poi_1opp" step="0.5" onchange="sum_1opp();" name="poi_1opp" type="number" placeholder="-2 to 2" class="form-control input-md" required=""></th>
-      <th scope="col"><input readonly id="total_1opp" name="total_1opp" type="number" class="form-control input-md" required=""></th>
+      <th scope="col"><input readonly id="total_1opp" name="total_1opp" type="number" onchange="summarize()" class="form-control input-md" required=""></th>
 
       <script>
       function sum_1opp() {
@@ -585,7 +600,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         var total_1opp = document.getElementById('total_1opp');
 
         var curr_1opp = "";
-        if(parseFloat(content_1opp.value)<24||parseFloat(content_1opp.value)>32)
+        if(parseFloat(content_1opp.value)<24||parseFloat(content_1opp.value)>32||!Number.isInteger(2*content_1opp.value))
         {
           content_1opp.style.backgroundColor = "#ff6961";
         }
@@ -593,7 +608,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         {
           content_1opp.style.backgroundColor = "#ffffff";
         }
-        if(parseFloat(style_1opp.value)<24||parseFloat(style_1opp.value)>32)
+        if(parseFloat(style_1opp.value)<24||parseFloat(style_1opp.value)>32||!Number.isInteger(2*style_1opp.value))
         {
           style_1opp.style.backgroundColor = "#ff6961";
         }
@@ -601,7 +616,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         {
           style_1opp.style.backgroundColor = "#ffffff";
         }
-        if(parseFloat(strategy_1opp.value)<12||parseFloat(strategy_1opp.value)>16)
+        if(parseFloat(strategy_1opp.value)<12||parseFloat(strategy_1opp.value)>16||!Number.isInteger(2*strategy_1opp.value))
         {
           strategy_1opp.style.backgroundColor = "#ff6961";
         }
@@ -609,7 +624,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         {
           strategy_1opp.style.backgroundColor = "#ffffff";
         }
-        if(parseFloat(poi_1opp.value)<-2||parseFloat(poi_1opp.value)>2)
+        if(parseFloat(poi_1opp.value)<-2||parseFloat(poi_1opp.value)>2||!Number.isInteger(2*poi_1opp.value))
         {
           poi_1opp.style.backgroundColor = "#ff6961";
         }
@@ -637,7 +652,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
       <th scope="col"><input id="style_2opp" step="0.5" onchange="sum_2opp();" name="style_2opp" type="number" placeholder="24 to 32" class="form-control input-md" required=""></th>
       <th scope="col"><input id="strategy_2opp" step="0.5" onchange="sum_2opp();" name="strategy_2opp" type="number" placeholder="12 to 16" class="form-control input-md" required=""></th>
       <th scope="col"><input id="poi_2opp" step="0.5" onchange="sum_2opp();" name="poi_2opp" type="number" placeholder="-2 to 2" class="form-control input-md" required=""></th>
-      <th scope="col"><input readonly id="total_2opp" name="total_2opp" type="number" class="form-control input-md" required=""></th>
+      <th scope="col"><input readonly id="total_2opp" name="total_2opp" type="number" onchange="summarize()" class="form-control input-md" required=""></th>
 
       <script>
       function sum_2opp() {
@@ -648,7 +663,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         var total_2opp = document.getElementById('total_2opp');
 
         var curr_2opp = "";
-        if(parseFloat(content_2opp.value)<24||parseFloat(content_2opp.value)>32)
+        if(parseFloat(content_2opp.value)<24||parseFloat(content_2opp.value)>32||!Number.isInteger(2*content_2opp.value))
         {
           content_2opp.style.backgroundColor = "#ff6961";
         }
@@ -656,7 +671,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         {
           content_2opp.style.backgroundColor = "#ffffff";
         }
-        if(parseFloat(style_2opp.value)<24||parseFloat(style_2opp.value)>32)
+        if(parseFloat(style_2opp.value)<24||parseFloat(style_2opp.value)>32||!Number.isInteger(2*style_2opp.value))
         {
           style_2opp.style.backgroundColor = "#ff6961";
         }
@@ -664,7 +679,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         {
           style_2opp.style.backgroundColor = "#ffffff";
         }
-        if(parseFloat(strategy_2opp.value)<12||parseFloat(strategy_2opp.value)>16)
+        if(parseFloat(strategy_2opp.value)<12||parseFloat(strategy_2opp.value)>16||!Number.isInteger(2*strategy_2opp.value))
         {
           strategy_2opp.style.backgroundColor = "#ff6961";
         }
@@ -672,7 +687,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         {
           strategy_2opp.style.backgroundColor = "#ffffff";
         }
-        if(parseFloat(poi_2opp.value)<-2||parseFloat(poi_2opp.value)>2)
+        if(parseFloat(poi_2opp.value)<-2||parseFloat(poi_2opp.value)>2||!Number.isInteger(2*poi_2opp.value))
         {
           poi_2opp.style.backgroundColor = "#ff6961";
         }
@@ -699,7 +714,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
       <th scope="col"><input id="style_3opp" step="0.5" onchange="sum_3opp();" name="style_3opp" type="number" placeholder="24 to 32" class="form-control input-md" required=""></th>
       <th scope="col"><input id="strategy_3opp" step="0.5" onchange="sum_3opp();" name="strategy_3opp" type="number" placeholder="12 to 16" class="form-control input-md" required=""></th>
       <th scope="col"><input id="poi_3opp" step="0.5" onchange="sum_3opp();" name="poi_3opp" type="number" placeholder="-2 to 2" class="form-control input-md" required=""></th>
-      <th scope="col"><input readonly id="total_3opp" name="total_3opp" type="number" class="form-control input-md" required=""></th>
+      <th scope="col"><input readonly id="total_3opp" name="total_3opp" type="number" onchange="summarize()" class="form-control input-md" required=""></th>
 
       <script>
       function sum_3opp() {
@@ -710,7 +725,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         var total_3opp = document.getElementById('total_3opp');
 
         var curr_3opp = "";
-        if(parseFloat(content_3opp.value)<24||parseFloat(content_3opp.value)>32)
+        if(parseFloat(content_3opp.value)<24||parseFloat(content_3opp.value)>32||!Number.isInteger(2*content_3opp.value))
         {
           content_3opp.style.backgroundColor = "#ff6961";
         }
@@ -718,7 +733,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         {
           content_3opp.style.backgroundColor = "#ffffff";
         }
-        if(parseFloat(style_3opp.value)<24||parseFloat(style_3opp.value)>32)
+        if(parseFloat(style_3opp.value)<24||parseFloat(style_3opp.value)>32||!Number.isInteger(2*style_3opp.value))
         {
           style_3opp.style.backgroundColor = "#ff6961";
         }
@@ -726,7 +741,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         {
           style_3opp.style.backgroundColor = "#ffffff";
         }
-        if(parseFloat(strategy_3opp.value)<12||parseFloat(strategy_3opp.value)>16)
+        if(parseFloat(strategy_3opp.value)<12||parseFloat(strategy_3opp.value)>16||!Number.isInteger(2*strategy_3opp.value))
         {
           strategy_3opp.style.backgroundColor = "#ff6961";
         }
@@ -734,7 +749,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         {
           strategy_3opp.style.backgroundColor = "#ffffff";
         }
-        if(parseFloat(poi_3opp.value)<-2||parseFloat(poi_3opp.value)>2)
+        if(parseFloat(poi_3opp.value)<-2||parseFloat(poi_3opp.value)>2||!Number.isInteger(2*poi_3opp.value))
         {
           poi_3opp.style.backgroundColor = "#ff6961";
         }
@@ -762,7 +777,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
       <th scope="col"><input id="style_replyopp" step="0.5" onchange="sum_replyopp();" name="style_replyopp" type="number" placeholder="12 to 16" class="form-control input-md" required=""></th>
       <th scope="col"><input id="strategy_replyopp" step="0.5" onchange="sum_replyopp();" name="strategy_replyopp" type="number" placeholder="6 to 8" class="form-control input-md" required=""></th>
       <th scope="col"></th>
-      <th scope="col"><input readonly id="total_replyopp" name="total_replyopp" type="number" class="form-control input-md" required=""></th>
+      <th scope="col"><input readonly id="total_replyopp" name="total_replyopp" type="number" onchange="summarize()" class="form-control input-md" required=""></th>
 
       <script>
       function sum_replyopp() {
@@ -772,7 +787,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         var total_replyopp = document.getElementById('total_replyopp');
 
         var curr_replyopp = "";
-        if(parseFloat(content_replyopp.value)<12||parseFloat(content_replyopp.value)>16)
+        if(parseFloat(content_replyopp.value)<12||parseFloat(content_replyopp.value)>16||!Number.isInteger(2*content_replyopp.value))
         {
           content_replyopp.style.backgroundColor = "#ff6961";
         }
@@ -780,7 +795,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         {
           content_replyopp.style.backgroundColor = "#ffffff";
         }
-        if(parseFloat(style_replyopp.value)<12||parseFloat(style_replyopp.value)>16)
+        if(parseFloat(style_replyopp.value)<12||parseFloat(style_replyopp.value)>16||!Number.isInteger(2*style_replyopp.value))
         {
           style_replyopp.style.backgroundColor = "#ff6961";
         }
@@ -788,7 +803,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         {
           style_replyopp.style.backgroundColor = "#ffffff";
         }
-        if(parseFloat(strategy_replyopp.value)<6||parseFloat(strategy_replyopp.value)>8)
+        if(parseFloat(strategy_replyopp.value)<6||parseFloat(strategy_replyopp.value)>8||!Number.isInteger(2*strategy_replyopp.value))
         {
           strategy_replyopp.style.backgroundColor = "#ff6961";
         }
@@ -815,7 +830,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
       <th scope="col"></th>
       <th scope="col"></th>
       <th scope="col">Total Opp Score</th>
-      <th scope="col"><input readonly id="total_opp" name="total_opp" type="number" class="form-control input-md" required=""></th>
+      <th scope="col"><input readonly id="total_opp" name="total_opp" type="number" onchange="summarize()" class="form-control input-md" required=""></th>
       <script>
       function sum_opp() {
         var total_1opp = document.getElementById('total_1opp');
@@ -832,23 +847,55 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
         if (!isNaN(total)) {
            total_opp.value = total;
         }
+        summarize();
       }
       </script>
     </tr>
 
   </tbody>
 </table>
+<label id="summary" class="col-md-8">❓ No results are in yet. Some fields are not complete yet, perhaps?</label> 
+<script type="text/javascript">
+  function summarize(){
+  var summary = document.getElementById('summary');
+  var total_prop = document.getElementById('total_prop');
+  var total_opp = document.getElementById('total_opp');
 
-<p>This document is an official replacement for paper ballots. By clicking submit, you hereby declare that you have responsibly filled in all the fields correctly.</p>
+  if(!isCorrect())
+  {
+    summary.innerHTML = "⚠️WARNING: Ballot Error or incomplete. please check!"
+  }
+  else if(total_prop.value&&total_opp.value)
+  {
+    var margin = total_prop.value - total_opp.value;
+    if(margin > 0)
+    {
+      summary.innerHTML = "➕Proposition wins by "+Math.abs(margin)+" margin!"
+    }
+    else if(margin <0)
+    {
+      summary.innerHTML = "➖Opposition wins by "+Math.abs(margin)+" margin!"
+    }
+    else
+    {
+      summary.innerHTML = "⚠️WARNING: No tie score allowed. Please check!"
+    }
+  }  
+}
+</script>
+
+<p class="col-md-4" style="font-size: 14px; font-style: italic;"><br>This document is an official replacement for paper ballots. By clicking submit, you hereby declare that you have responsibly filled in all the fields correctly.</p>
 <!-- Button -->
 <div class="form-group">
   <div class="col-md-4">
-    <button type="button" onclick="Validate()" class="btn btn-primary">Submit Ballot</button>
+    <button type="button" onclick="Finalize()" class="btn btn-primary">Submit Ballot</button>
   </div>
 </div>
 
 </fieldset>
 </form>
+
+<p class="col-md-4" style="font-size: 14px; font-style: italic;"><br>Need timing app on your PC? try <a href="https://andreesc15.github.io/debatewatch/wsdc" target="_blank">Debatewatch</a> by Andree Chandra!.</p>
 
 </body>
 </head>
