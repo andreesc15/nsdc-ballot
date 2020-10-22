@@ -6,6 +6,119 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
 </script>
 <script>
+    function Validate(){
+        var judge = document.getElementById('judge');
+
+        var content_1prop = document.getElementById('content_1prop');
+        var style_1prop = document.getElementById('style_1prop');
+        var strategy_1prop = document.getElementById('strategy_1prop');
+        var poi_1prop = document.getElementById('poi_1prop');
+        var total_1prop = document.getElementById('total_1prop');
+        
+        var content_2prop = document.getElementById('content_2prop');
+        var style_2prop = document.getElementById('style_2prop');
+        var strategy_2prop = document.getElementById('strategy_2prop');
+        var poi_2prop = document.getElementById('poi_2prop');
+        var total_2prop = document.getElementById('total_2prop');
+
+        var content_3prop = document.getElementById('content_3prop');
+        var style_3prop = document.getElementById('style_3prop');
+        var strategy_3prop = document.getElementById('strategy_3prop');
+        var poi_3prop = document.getElementById('poi_3prop');
+        var total_3prop = document.getElementById('total_3prop');
+
+        var content_replyprop = document.getElementById('content_replyprop');
+        var style_replyprop = document.getElementById('style_replyprop');
+        var strategy_replyprop = document.getElementById('strategy_replyprop');
+        var total_replyprop = document.getElementById('total_replyprop');
+
+        var total_prop = document.getElementById('total_prop');
+
+        var content_1opp = document.getElementById('content_1opp');
+        var style_1opp = document.getElementById('style_1opp');
+        var strategy_1opp = document.getElementById('strategy_1opp');
+        var poi_1opp = document.getElementById('poi_1opp');
+        var total_1opp = document.getElementById('total_1opp');
+        
+        var content_2opp = document.getElementById('content_2opp');
+        var style_2opp = document.getElementById('style_2opp');
+        var strategy_2opp = document.getElementById('strategy_2opp');
+        var poi_2opp = document.getElementById('poi_2opp');
+        var total_2opp = document.getElementById('total_2opp');
+
+        var content_3opp = document.getElementById('content_3opp');
+        var style_3opp = document.getElementById('style_3opp');
+        var strategy_3opp = document.getElementById('strategy_3opp');
+        var poi_3opp = document.getElementById('poi_3opp');
+        var total_3opp = document.getElementById('total_3opp');
+
+        var content_replyopp = document.getElementById('content_replyopp');
+        var style_replyopp = document.getElementById('style_replyopp');
+        var strategy_replyopp = document.getElementById('strategy_replyopp');
+        var total_replyopp = document.getElementById('total_replyopp');
+
+        var total_opp = document.getElementById('total_opp');
+
+        var flag = true;
+
+        if(!judge.value) flag = false;
+        if(!content_1prop.value||content_1prop.value<24||content_1prop.value>32) flag = false;
+        if(!style_1prop.value||style_1prop.value<24||style_1prop.value>32) flag = false;
+        if(!strategy_1prop.value||strategy_1prop.value<12||strategy_1prop.value>16) flag = false;
+        if(!poi_1prop.value||poi_1prop.value<-2||poi_1prop.value>2) flag = false;
+        if(!total_1prop.value) flag = false;
+
+        if(!content_2prop.value||content_2prop.value<24||content_2prop.value>32) flag = false;
+        if(!style_2prop.value||style_2prop.value<24||style_2prop.value>32) flag = false;
+        if(!strategy_2prop.value||strategy_2prop.value<12||strategy_2prop.value>16) flag = false;
+        if(!poi_2prop.value||poi_2prop.value<-2||poi_2prop.value>2) flag = false;
+        if(!total_2prop.value) flag = false;
+
+        if(!content_3prop.value||content_3prop.value<24||content_3prop.value>32) flag = false;
+        if(!style_3prop.value||style_3prop.value<24||style_3prop.value>32) flag = false;
+        if(!strategy_3prop.value||strategy_3prop.value<12||strategy_3prop.value>16) flag = false;
+        if(!poi_3prop.value||poi_3prop.value<-2||poi_3prop.value>2) flag = false;
+        if(!total_3prop.value) flag = false;
+
+
+        if(!content_replyprop.value||content_replyprop.value<12||content_replyprop.value>16) flag = false;
+        if(!style_replyprop.value||style_replyprop.value<12||style_replyprop.value>16) flag = false;
+        if(!strategy_replyprop.value||strategy_replyprop.value<6||strategy_replyprop.value>8) flag = false;
+        if(!total_replyprop.value) flag = false;
+
+        if(!total_prop.value) flag = false;
+
+        if(!content_1opp.value||content_1opp.value<24||content_1opp.value>32) flag = false;
+        if(!style_1opp.value||style_1opp.value<24||style_1opp.value>32) flag = false;
+        if(!strategy_1opp.value||strategy_1opp.value<12||strategy_1opp.value>16) flag = false;
+        if(!poi_1opp.value||poi_1opp.value<-2||poi_1opp.value>2) flag = false;
+        if(!total_1opp.value) flag = false;
+
+        if(!content_2opp.value||content_2opp.value<24||content_2opp.value>32) flag = false;
+        if(!style_2opp.value||style_2opp.value<24||style_2opp.value>32) flag = false;
+        if(!strategy_2opp.value||strategy_2opp.value<12||strategy_2opp.value>16) flag = false;
+        if(!poi_2opp.value||poi_2opp.value<-2||poi_2opp.value>2) flag = false;
+        if(!total_2opp.value) flag = false;
+
+        if(!content_3opp.value||content_3opp.value<24||content_3opp.value>32) flag = false;
+        if(!style_3opp.value||style_3opp.value<24||style_3opp.value>32) flag = false;
+        if(!strategy_3opp.value||strategy_3opp.value<12||strategy_3opp.value>16) flag = false;
+        if(!poi_3opp.value||poi_3opp.value<-2||poi_3opp.value>2) flag = false;
+        if(!total_3opp.value) flag = false;
+
+
+        if(!content_replyopp.value||content_replyopp.value<12||content_replyopp.value>16) flag = false;
+        if(!style_replyopp.value||style_replyopp.value<12||style_replyopp.value>16) flag = false;
+        if(!strategy_replyopp.value||strategy_replyopp.value<6||strategy_replyopp.value>8) flag = false;
+        if(!total_replyopp.value) flag = false;
+
+        if(!total_opp.value) flag = false;
+        
+
+        if(flag) SubForm();
+        else alert("some boxes aren't filled yet. Please recheck!");             
+    }
+
     function SubForm (){
       $.ajax({
         url:"https://api.apispreadsheets.com/data/2299/",
@@ -68,7 +181,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
 <!-- Select Basic -->
 <div class="form-row">
   <div class="col-md-3">
-    <label for="prop">Proposition Team?</label>
+    <label for="prop">➕Proposition Team?</label>
     <select id="prop" name="prop" class="form-control">
       <option value="ACEH">ACEH</option>
       <option value="BALI">BALI</option>
@@ -110,7 +223,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
   </div>
 
   <div class="col-md-3">
-    <label for="opp">Opposition Team?</label>
+    <label for="opp">➖Opposition Team?</label>
     <select id="opp" name="opp" class="form-control">
       <option value="ACEH">ACEH</option>
       <option value="BALI">BALI</option>
@@ -730,7 +843,7 @@ timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getS
 <!-- Button -->
 <div class="form-group">
   <div class="col-md-4">
-    <button type="button" onclick="SubForm()" class="btn btn-primary">Submit Ballot</button>
+    <button type="button" onclick="Validate()" class="btn btn-primary">Submit Ballot</button>
   </div>
 </div>
 
