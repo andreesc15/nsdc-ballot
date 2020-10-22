@@ -127,7 +127,7 @@
     }
     function Finalize(){        
         if(isCorrect()) SubForm();
-        else alert("some boxes aren't filled properly yet. Please recheck!");             
+        else alert("Some fields aren't filled properly yet. Please recheck!");             
     }
 
     function SubForm (){
@@ -136,10 +136,10 @@
         type:"post",
         data:$("#myForm").serializeArray(),
         success: function(){
-          alert("Form Data Submitted :)")
+          alert("Form Ballot Submitted :) Don't forget the Tabbycat too!~")
         },
         error: function(){
-          alert("There was an error :(")
+          alert("There was an error :( Contact tab team immediately should you see this error message.")
         }
       });
     }
