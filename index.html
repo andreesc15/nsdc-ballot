@@ -126,8 +126,14 @@
         return flag;
     }
     function Finalize(){        
-        if(isCorrect()) SubForm();
-        else alert("Some fields aren't filled properly yet. Please recheck!");             
+        if(isCorrect()) {
+          var today = new Date();
+          var timestamp = document.getElementById('timestamp');
+          timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+          SubForm();
+        }
+        else alert("❗Some fields aren't filled properly yet. Please recheck!");             
     }
 
     function SubForm (){
@@ -136,10 +142,10 @@
         type:"post",
         data:$("#myForm").serializeArray(),
         success: function(){
-          alert("Form Ballot Submitted :) Don't forget the Tabbycat too!~")
+          alert("✔️Form Ballot Submitted :) Don't forget the Tabbycat too!~")
         },
         error: function(){
-          alert("There was an error :( Contact tab team immediately should you see this error message.")
+          alert("❌There was an error :( Contact tab team immediately should you see this error message.")
         }
       });
     }
@@ -152,14 +158,9 @@
 
 <!-- Timestamp -->
 <input type="hidden" id="timestamp" name="timestamp">
-<script type="text/javascript">
-var today = new Date();
-var timestamp = document.getElementById('timestamp');
-timestamp.value = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-</script>
 
 <!-- Form Name -->
-<legend><b>NSDC 2020 Scoresheets</b></legend>
+<legend><b>📋 NSDC 2020 Scoresheets</b></legend>
 <legend>1. Debate Details</legend>
 
 <!-- Text input-->
